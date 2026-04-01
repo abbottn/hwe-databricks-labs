@@ -58,7 +58,7 @@ This document shows the test data that is automatically created by the test fixt
 - Should return: 6
 
 ### Salary Range ($50k - $100k)
-- Should return: EMP-001 ($85k), EMP-002 ($65k), EMP-003 ($55k) (3 rows)
+- Should return: EMP-001 ($85k), EMP-002 ($65k), EMP-003 ($55k), EMP-006 ($75k) (4 rows)
 
 ### Recent Hires (last 30 days)
 - Should return: EMP-006 (1 row)

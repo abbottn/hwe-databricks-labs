@@ -70,7 +70,7 @@ After running silver transformations:
 - **silver.categories**: 3 rows (all pass through)
 - **silver.stores**: 1 row (all pass through)
 - **silver.books**: **2 rows** (only valid ISBNs with non-empty titles)
-- **silver.customers**: **2 rows** (alice@example.com with "Alice New" data, bob@example.com)
+- **silver.customers**: **1 row** (alice@example.com with "Alice New" data — silver.customers is derived from bronze.online_orders only; bob has no online orders)
 - **silver.orders**: **4 rows** (2 online + 2 in-store, with sentinel values)
   - ONL orders: `store_nbr = 'online'`
   - INS-001: `customer_email = 'in-store'`
