@@ -36,7 +36,7 @@ def test_valid_email_filter(spark):
     rows = _run_cell(spark, "valid_email_filter").collect()
     emails = [r.email for r in rows]
     # rows is a list of Row objects; emails is a list of strings
-    # TODO: assert the correct number of employees are returned and every email contains '@'
+    # TODO: assert the correct number of employees are returned, every email is not None, and contains '@'
 
 
 def test_count_employees(spark):
@@ -69,13 +69,6 @@ def test_average_salary_by_department(spark):
     # dept_avgs is a dict mapping string (department name) to Decimal (average salary)
     # TODO: assert the correct number of departments are returned, check specific avg_salary values
     # (hint: Engineering avg = 102500, Sales avg = 70000), and verify results are ordered descending by avg_salary
-
-
-def test_employees_with_valid_email(spark):
-    """Verify that email filter excludes NULL and empty emails."""
-    rows = _run_cell(spark, "employees_with_valid_email").collect()
-    # rows is a list of Row objects; rows[0].email is a string or None
-    # TODO: assert the correct number of rows are returned and all emails are non-null and non-empty string
 
 
 # ---------------------------------------------------------------------------
