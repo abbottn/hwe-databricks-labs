@@ -31,6 +31,7 @@ def test_employees_in_salary_range(spark):
     _run_cell(spark, "employees_in_salary_range")
     rows = spark.sql("SELECT * FROM week3_testing.employees WHERE salary >= 50000 AND salary <= 100000").collect()
     # TODO: assert len(rows) equals the number of employees with salary between $50,000 and $100,000
+    assert len(rows) == 4;
 
 
 def test_recent_hires(spark):
@@ -38,6 +39,7 @@ def test_recent_hires(spark):
     _run_cell(spark, "recent_hires")
     rows = spark.sql("SELECT * FROM week3_testing.filtered_employees").collect()
     # TODO: assert len(rows) equals 1 and rows[0].employee_id equals 'EMP-006'
+    assert len(rows) == 1 and rows[0].employee_id == 'EMP-006';
 
 
 def test_engineering_department_filter(spark):
@@ -45,6 +47,7 @@ def test_engineering_department_filter(spark):
     _run_cell(spark, "engineering_department_filter")
     rows = spark.sql("SELECT * FROM week3_testing.filtered_employees").collect()
     # TODO: assert len(rows) equals the number of Engineering employees
+    assert len(rows) == 2;
 
 
 # ===========================================================================
